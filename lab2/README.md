@@ -63,12 +63,12 @@ b.go();
 						</div>
             <h4>Покемоны:</h4>
 
-![pokemons image](\somepicture\my_pokemons.jpg)
+![pokemons image](somepicture/my_pokemons.jpg)
 
 ## 2.Диаграмма классов реализованной объектной модели.
 
-![pokemons image](\somepicture\atacks.jpg)
-![pokemons image](\somepicture\Pokemons.jpg)
+![pokemons image](somepicture/atacks.jpg)
+![pokemons image](somepicture/Pokemons.jpg)
 
 ## 3. Результат работы программы.
 
