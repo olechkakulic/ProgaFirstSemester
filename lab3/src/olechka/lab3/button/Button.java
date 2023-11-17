@@ -3,7 +3,6 @@ package olechka.lab3.button;
 import olechka.lab3.Color;
 import olechka.lab3.Material;
 import olechka.lab3.PhysicalObject;
-import olechka.lab3.human.Human;
 import olechka.lab3.interfaces.Interactible;
 
 import java.util.Objects;
@@ -24,14 +23,9 @@ public class Button extends PhysicalObject implements Interactible {
 
     //интеракт у нас будет отвечать за взаимодействие. если кнопка уже нажата то поменяем переменную на false. и наоборот
     @Override
-    public void interact(Human human) {
+    public void interacted() {
 //        знак ! не меняет значение переменной, тут буквально написано если тут правда лежит false то
-        if (!isToggled) {
-            isToggled = true;
-        } else {
-            isToggled = false;
-        }
-        System.out.println(human.getName() + " нажимает на кнопку");
+        isToggled = !isToggled;
     }
 
     @Override

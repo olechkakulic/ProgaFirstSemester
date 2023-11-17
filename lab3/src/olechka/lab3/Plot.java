@@ -15,22 +15,26 @@ import java.util.Collections;
 import java.util.List;
 
 public class Plot {
-    Gamak gamak = new Gamak();
-    GamakButton gamakButton = new GamakButton(gamak);
-    Shurupchik shurupchik = new Shurupchik();
-    Human[] visitors = {
+    private final Gamak gamak = new Gamak();
+    private final GamakButton gamakButton = new GamakButton(gamak);
+    private final Shurupchik shurupchik = new Shurupchik();
+    private final Human[] visitors = {
             new Human(5, 92, 36, "Зритель 1"),
             new Human(5, 94, 37, "Зритель 2"),
             new Human(4, 95, 31, "Зритель 3"),
             new Human(6, 93, 32, "Зритель 4"),
     };
-    MainRoom mainRoom = new MainRoom();
-    Basement basement = new Basement();
-    OpenCloseButton basementButton = new OpenCloseButton(Color.WHITE, basement);
+    private final MainRoom mainRoom = new MainRoom();
+    private final Basement basement = new Basement();
+    private final OpenCloseButton basementButton = new OpenCloseButton(Color.WHITE, basement);
 
-    List<Button> buttons = new ArrayList<>();
+    private List<Button> buttons;
 
     public Plot() {
+    }
+
+    public void prepare() {
+        List<Button> buttons = new ArrayList<>();
         mainRoom.addObjects(gamakButton, gamak);
         mainRoom.addObjects(basementButton);
         for (int i = 0; i < 5; i++) {
@@ -68,18 +72,19 @@ public class Plot {
         mainRoom.enter(visitors);
 
         Collections.shuffle(buttons);
+        this.buttons = buttons;
     }
 
     public void run() {
-        gamakButton.interact(shurupchik);
+        shurupchik.pushButton(gamakButton);
         for (Human visitor : visitors) {
             visitor.surprise();
         }
         gamak.humanWakeUp();
         for (Button button : buttons) {
-            button.interact(shurupchik);
+            shurupchik.pushButton(button);
         }
-        basementButton.interact(shurupchik);
+        shurupchik.pushButton(basementButton);
         mainRoom.leave(shurupchik);
         basement.enter(shurupchik);
     }

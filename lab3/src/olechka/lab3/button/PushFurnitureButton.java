@@ -2,7 +2,6 @@ package olechka.lab3.button;
 
 import olechka.lab3.Color;
 import olechka.lab3.Material;
-import olechka.lab3.human.Human;
 import olechka.lab3.interfaces.Pushable;
 
 import java.util.Objects;
@@ -23,8 +22,8 @@ public class PushFurnitureButton extends Button {
 
     //мы проверяем состояние (нажато или нет кнопка) и выполняем определенное действием. пинаем.
     @Override
-    public void interact(Human human) {
-        super.interact(human);
+    public void interacted() {
+        super.interacted();
         if (isToggled) {
             pushable.push();
         }

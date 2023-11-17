@@ -1,11 +1,14 @@
 package olechka.lab3.human;
 
+import olechka.lab3.button.Button;
+
 import java.util.Objects;
 
 public class Human {
     protected int age;
     protected int height;
     protected int weight;
+    protected HumanSense sense;
 
     protected final String name;
 
@@ -16,6 +19,7 @@ public class Human {
         this.height = height;
         this.weight = weight;
         this.name = name;
+        sense = HumanSense.NORMAL;
     }
 
     public String getName() {
@@ -23,7 +27,17 @@ public class Human {
     }
 
     public void surprise() {
-        System.out.println(name + " удивляется");
+        setSense(HumanSense.ASTONISHED);
+    }
+
+    public void setSense(HumanSense sense) {
+        this.sense = sense;
+        System.out.println(name + " теперь " + sense.getState());
+    }
+
+    public void pushButton(Button button) {
+        button.interacted();
+        System.out.println(name + " нажимает на кнопку");
     }
 
     @Override
@@ -45,6 +59,7 @@ public class Human {
                 "age=" + age +
                 ", height=" + height +
                 ", weight=" + weight +
+                ", sense=" + sense +
                 ", name='" + name + '\'' +
                 '}';
     }

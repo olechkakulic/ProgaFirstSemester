@@ -2,7 +2,6 @@ package olechka.lab3.button;
 
 import olechka.lab3.Color;
 import olechka.lab3.Material;
-import olechka.lab3.human.Human;
 import olechka.lab3.interfaces.Openable;
 
 import java.util.Objects;
@@ -16,8 +15,8 @@ public class OpenCloseButton extends Button {
     }
 
     @Override
-    public void interact(Human human) {
-        super.interact(human);
+    public void interacted() {
+        super.interacted();
         if (isToggled) {
             openable.open();
         } else {
