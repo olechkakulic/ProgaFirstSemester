@@ -24,4 +24,5 @@ public class Shurupchik extends Human {
         System.out.println("Шурупчик подвел " + human.name + " к " + space.getName());
         human.isBroughtTo = space;
     }
+
 }

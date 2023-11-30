@@ -2,6 +2,7 @@ package olechka.lab4.human;
 
 import olechka.lab4.button.Button;
 import olechka.lab4.interfaces.Speaking;
+import olechka.lab4.inventory.Briefcase;
 import olechka.lab4.space.Space;
 
 import java.util.Objects;
@@ -53,6 +54,11 @@ public class Human {
 
     public void say(String phrase) {
         mouth.say(phrase);
+    }
+
+    public void openBrieface(Briefcase briefcase) {
+        briefcase.open();
+        System.out.println(name + " открывает " + briefcase.name);
     }
 
     @Override

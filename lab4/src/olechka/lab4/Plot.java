@@ -10,6 +10,7 @@ import olechka.lab4.human.Human;
 import olechka.lab4.human.Shpuntik;
 import olechka.lab4.human.Shurupchik;
 import olechka.lab4.human.Vintik;
+import olechka.lab4.inventory.NuclearBriefcase;
 import olechka.lab4.space.Barn;
 import olechka.lab4.space.Basement;
 import olechka.lab4.space.MainRoom;
@@ -25,6 +26,9 @@ public class Plot {
     private final Shurupchik shurupchik = new Shurupchik();
     private final Shpuntik shpuntik = new Shpuntik();
     private final Vintik vintik = new Vintik();
+    private final NuclearBriefcase nuclearBriefcase = new NuclearBriefcase();
+
+
     //    предзаполненный список (класс анонимус)
     private final List<Human> visitors = new ArrayList<>() {
         //        безымянный конструктор
@@ -48,6 +52,7 @@ public class Plot {
     //значения кнопкам мы присваиваем в методе prepare.
     private List<Button> buttons;
     private int timeInSecondsSinceSunrise;
+
 
     public Plot() {
         timeInSecondsSinceSunrise = 43200;
@@ -118,6 +123,10 @@ public class Plot {
         shurupchik.say("Здесь у меня гараж!");
         shurupchik.bring(shpuntik, barn);
         shurupchik.bring(vintik, barn);
+        shurupchik.openBrieface(nuclearBriefcase);
+        Button deadButton = nuclearBriefcase.getButton();
+        shurupchik.pushButton(deadButton);
+
 
     }
 
