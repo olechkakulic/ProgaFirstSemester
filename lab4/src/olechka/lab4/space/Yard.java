@@ -4,7 +4,7 @@ import olechka.lab4.Color;
 
 public class Yard extends Space {
     public Yard() {
-        super(new RoomBounds(100, 100), "двор", null, Color.GREEN);
+        super(new SpaceBounds(100, 100), "двор", null, Color.GREEN);
     }
 
     @Override

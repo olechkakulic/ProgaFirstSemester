@@ -10,7 +10,7 @@ public class Basement extends Space implements Openable {
     private boolean isOpen = false;
 
     public Basement() {
-        super(new RoomBounds(2, 3), "Подвал", Material.WOOD, Color.WHITE);
+        super(new SpaceBounds(2, 3), "Подвал", Material.WOOD, Color.WHITE);
     }
 
 

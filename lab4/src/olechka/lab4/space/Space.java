@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.Objects;
 
 public abstract class Space extends PhysicalObject {
-    protected final RoomBounds bounds;
+    protected final SpaceBounds bounds;
     protected final String name;
 
     //    для интеофейса у  нас динамическое связывание как и для всех объектов.
@@ -21,7 +21,7 @@ public abstract class Space extends PhysicalObject {
     protected final List<Human> humans = new ArrayList<>();
     protected final List<PhysicalObject> objects = new ArrayList<>();
 
-    protected Space(RoomBounds bounds, String name, Material material, Color color) {
+    protected Space(SpaceBounds bounds, String name, Material material, Color color) {
         super(bounds.height * bounds.width, material, color);
         this.bounds = bounds;
         this.name = name;
@@ -87,11 +87,11 @@ public abstract class Space extends PhysicalObject {
                 '}';
     }
 
-    public static class RoomBounds {
+    public static class SpaceBounds {
         public final int height;
         public final int width;
 
-        protected RoomBounds(int height, int width) {
+        protected SpaceBounds(int height, int width) {
             this.height = height;
             this.width = width;
         }
@@ -100,7 +100,7 @@ public abstract class Space extends PhysicalObject {
         public boolean equals(Object o) {
             if (this == o) return true;
             if (o == null || getClass() != o.getClass()) return false;
-            RoomBounds that = (RoomBounds) o;
+            SpaceBounds that = (SpaceBounds) o;
             return height == that.height && width == that.width;
         }
 

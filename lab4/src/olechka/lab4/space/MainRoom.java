@@ -5,7 +5,7 @@ import olechka.lab4.Material;
 
 public class MainRoom extends Space {
     public MainRoom() {
-        super(new RoomBounds(5, 20), "Зал", Material.WOOD, Color.BLUE);
+        super(new SpaceBounds(5, 20), "Зал", Material.WOOD, Color.BLUE);
     }
 
     @Override

@@ -13,7 +13,7 @@ public class Barn extends Space implements Openable {
     private boolean isOpen;
 
     public Barn() {
-        super(new RoomBounds(3, 5), "Сарай", Material.STONE, Color.BROWN);
+        super(new SpaceBounds(3, 5), "Сарай", Material.STONE, Color.BROWN);
         door = new Door();
     }
 
